@@ -183,14 +183,15 @@
         backdrop-filter: saturate(180%) blur(8px);
         background: rgba(255, 255, 255, 0.8);
       }
-      @media (max-width: 768px) {
-        .hero-content {
-          text-align: center;
-        }
-        .timeline-line::before {
-          left: 20px;
-          transform: none;
-        }
+      @media (max-width: 768px){
+        .hero-content{text-align:center}
+        .timeline-line{position:relative;padding-left:16px}
+        .timeline-line::before{left:35px;transform:none}
+        .timeline-item{display:grid;grid-template-columns:40px 1fr;align-items:flex-start;gap:12px;margin-bottom:24px}
+        .timeline-item .dot{display:flex;align-items:center;justify-content:center;margin-top:6px}
+        .timeline-item .dot>div{width:12px;height:12px;border-radius:9999px;flex:0 0 auto}
+        .timeline-item .text{text-align:left;padding-right:0}
+        .timeline-item .spacer{display:none}
       }
     </style>
   </head>
@@ -225,6 +226,11 @@
               class="text-gray-700 hover:text-purple-600 transition"
               >Timeline</a
             >
+          </li>
+          <li><a 
+              href="#dados" 
+              class="text-gray-700 hover:text-purple-600 transition"
+              >Dados</a>
           </li>
           <li>
             <a
@@ -285,6 +291,9 @@
             >
           </li>
           <li>
+            <a href="#dados" class="block py-2 text-gray-700 hover:text-purple-600">Dados</a>
+          </li>
+          <li>
             <a
               href="#servicos"
               class="block py-2 text-gray-700 hover:text-purple-600"
@@ -324,7 +333,7 @@
             <p class="text-xl mb-8 text-gray-700">
               Consultoria medicamentosa personalizada para sua saúde e bem-estar
             </p>
-            <div class="flex gap-4">
+            <div class="mt-6 flex flex-col sm:flex-row gap-3 sm:justify-start justify-center">
               <a href="#contato" class="btn-primary magnetic-btn"
                 >Agendar Consultoria</a
               >
@@ -414,66 +423,85 @@
           </div>
         </div>
       </section>
+      <section id="dados" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl font-bold text-center mb-12 gradient-text">Dados Profissionais (CRF)</h2>
+          <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div class="bg-gray-50 p-6 rounded-lg shadow">
+              <h3 class="text-lg font-semibold mb-2 flex items-center gap-2">
+                <i class="fa-solid fa-id-card-clip"></i> Registro
+              </h3>
+              <ul class="space-y-1">
+                <li><span class="font-medium">CRF:</span> <span>[CRF/UF 000000]</span></li>
+                <li><span class="font-medium">Situação:</span> <span>Ativo</span></li>
+                <li><span class="font-medium">Área:</span> <span>Farmácia Clínica</span></li>
+              </ul>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-lg shadow">
+              <h3 class="text-lg font-semibold mb-2 flex items-center gap-2">
+                <i class="fa-solid fa-briefcase-medical"></i> Atuação
+              </h3>
+              <ul class="space-y-1">
+                <li><span class="font-medium">Cidade/UF:</span> <span>[Cidade – UF]</span></li>
+                <li><span class="font-medium">Modelo:</span> <span>Presencial e Online</span></li>
+                <li><span class="font-medium">Público:</span> <span>Pacientes e Empresas</span></li>
+              </ul>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-lg shadow">
+              <h3 class="text-lg font-semibold mb-2 flex items-center gap-2">
+                <i class="fa-solid fa-paperclip"></i> Documentos
+              </h3>
+              <ul class="space-y-1">
+                <li><a class="text-purple-700 hover:underline" href="#" target="_blank" rel="noopener">Baixar currículo (PDF)</a></li>
+                <li><a class="text-purple-700 hover:underline" href="#" target="_blank" rel="noopener">Declaração CRF (link)</a></li>
+                <li><a class="text-purple-700 hover:underline" href="#contato">Solicitar comprovação</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
       <section id="timeline" class="py-20 bg-gray-100">
         <div class="container mx-auto px-4">
           <h2 class="text-3xl font-bold text-center mb-12 gradient-text">
             Minha Jornada Profissional
           </h2>
           <div class="timeline-line">
-            <div
-              class="timeline-item grid grid-cols-1 md:grid-cols-3 items-center gap-4 mb-10"
-            >
-              <div class="md:col-span-1 order-2 md:order-1 text-right md:pr-8">
+            <!-- Item 1 -->
+            <div class="timeline-item md:grid md:grid-cols-3 md:items-center md:gap-4 md:mb-10">
+              <div class="dot md:col-span-1 md:order-2 flex justify-center">
+                <div class="w-4 h-4 bg-purple-600 rounded-full"></div>
+              </div>
+              <div class="text md:col-span-1 md:order-1 md:text-right md:pr-8">
                 <h3 class="text-xl font-semibold">Formação Acadêmica</h3>
-                <p>
-                  Graduação em Farmácia pela
-                  <span class="italic">[Universidade]</span>, com especialização
-                  em Farmácia Clínica.
-                </p>
+                <p>Graduação em Farmácia pela <span class="italic">[Universidade]</span>, com especialização em Farmácia Clínica.</p>
               </div>
-              <div class="md:col-span-1 order-1 md:order-2 flex justify-center">
-                <div
-                  class="w-4 h-4 bg-purple-600 rounded-full"
-                  aria-hidden="true"
-                ></div>
-              </div>
-              <div class="md:col-span-1 order-3 md:order-3"></div>
+              <div class="spacer md:col-span-1 md:order-3"></div>
             </div>
-            <div
-              class="timeline-item grid grid-cols-1 md:grid-cols-3 items-center gap-4 mb-10"
-            >
-              <div class="md:col-span-1"></div>
-              <div class="md:col-span-1 flex justify-center">
-                <div
-                  class="w-4 h-4 bg-pink-600 rounded-full"
-                  aria-hidden="true"
-                ></div>
+
+            <!-- Item 2 -->
+            <div class="timeline-item md:grid md:grid-cols-3 md:items-center md:gap-4 md:mb-10">
+              <div class="spacer md:col-span-1"></div>
+              <div class="dot md:col-span-1 flex justify-center">
+                <div class="w-4 h-4 bg-pink-600 rounded-full"></div>
               </div>
-              <div class="md:col-span-1 md:pl-8">
+              <div class="text md:col-span-1 md:pl-8">
                 <h3 class="text-xl font-semibold">Experiência Profissional</h3>
-                <p>
-                  <span class="italic">[X]</span> anos dedicados à consultoria
-                  farmacêutica e atendimento ao paciente.
-                </p>
+                <p><span class="italic">[X]</span> anos dedicados à consultoria farmacêutica e atendimento ao paciente.</p>
               </div>
             </div>
-            <div
-              class="timeline-item grid grid-cols-1 md:grid-cols-3 items-center gap-4"
-            >
-              <div class="md:col-span-1 order-2 md:order-1 text-right md:pr-8">
+
+            <!-- Item 3 -->
+            <div class="timeline-item md:grid md:grid-cols-3 md:items-center md:gap-4">
+              <div class="dot md:col-span-1 md:order-2 flex justify-center">
+                <div class="w-4 h-4 bg-teal-600 rounded-full"></div>
+              </div>
+              <div class="text md:col-span-1 md:order-1 md:text-right md:pr-8">
                 <h3 class="text-xl font-semibold">Missão Atual</h3>
-                <p>
-                  Oferecer cuidado empático e personalizado para transformar
-                  vidas através da saúde.
-                </p>
+                <p>Oferecer cuidado empático e personalizado para transformar vidas através da saúde.</p>
               </div>
-              <div class="md:col-span-1 order-1 md:order-2 flex justify-center">
-                <div
-                  class="w-4 h-4 bg-teal-600 rounded-full"
-                  aria-hidden="true"
-                ></div>
-              </div>
-              <div class="md:col-span-1 order-3 md:order-3"></div>
+              <div class="spacer md:col-span-1 md:order-3"></div>
             </div>
           </div>
         </div>
@@ -579,7 +607,7 @@
                   class="bg-white p-6 rounded-lg text-center shadow-lg h-full flex flex-col justify-between"
                 >
                   <img
-                    src="https://via.placeholder.com/100x100?text=Carla"
+                    src="assets/carla-mendes.jpg"
                     alt="Foto de perfil de Carla Mendes"
                     class="rounded-full w-16 h-16 mx-auto mb-4"
                     loading="lazy"
@@ -596,7 +624,7 @@
                   class="bg-white p-6 rounded-lg text-center shadow-lg h-full flex flex-col justify-between"
                 >
                   <img
-                    src="https://via.placeholder.com/100x100?text=Rafael"
+                    src="assets/rafael-lima.jpg"
                     alt="Foto de perfil de Rafael Lima"
                     class="rounded-full w-16 h-16 mx-auto mb-4"
                     loading="lazy"
@@ -612,7 +640,7 @@
                   class="bg-white p-6 rounded-lg text-center shadow-lg h-full flex flex-col justify-between"
                 >
                   <img
-                    src="https://via.placeholder.com/100x100?text=Sofia"
+                    src="assets/sofia-alves.webp"
                     alt="Foto de perfil de Sofia Alves"
                     class="rounded-full w-16 h-16 mx-auto mb-4"
                     loading="lazy"
@@ -625,97 +653,6 @@
               </div>
             </div>
             <div class="swiper-pagination"></div>
-          </div>
-        </div>
-      </section>
-      <section id="contato" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-          <h2 class="text-3xl font-bold text-center mb-12 gradient-text">
-            Entre em Contato
-          </h2>
-          <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <form
-              id="contactForm"
-              class="bg-white p-6 rounded-lg shadow"
-              novalidate
-            >
-              <div class="grid grid-cols-1 gap-4">
-                <label class="block">
-                  <span class="text-sm font-medium">Nome</span>
-                  <input
-                    required
-                    name="nome"
-                    type="text"
-                    class="mt-1 w-full border border-gray-300 rounded-md p-2"
-                    placeholder="Seu nome"
-                  />
-                </label>
-                <label class="block">
-                  <span class="text-sm font-medium">E-mail</span>
-                  <input
-                    required
-                    name="email"
-                    type="email"
-                    class="mt-1 w-full border border-gray-300 rounded-md p-2"
-                    placeholder="voce@email.com"
-                  />
-                </label>
-                <label class="block">
-                  <span class="text-sm font-medium">Mensagem</span>
-                  <textarea
-                    required
-                    name="mensagem"
-                    rows="4"
-                    class="mt-1 w-full border border-gray-300 rounded-md p-2"
-                    placeholder="Como posso ajudar?"
-                  ></textarea>
-                </label>
-                <button type="submit" class="btn-primary w-max">
-                  <span class="sr-only">Enviar formulário</span>
-                  Enviar
-                </button>
-                <p id="formStatus" class="text-sm mt-3"></p>
-              </div>
-            </form>
-            <div class="bg-gray-50 p-6 rounded-lg shadow">
-              <ul class="space-y-3">
-                <li>
-                  <i class="fa-solid fa-envelope mr-2" aria-hidden="true"></i
-                  ><a href="mailto:contato@biancadocilio.com"
-                    >contato@biancadocilio.com</a
-                  >
-                </li>
-                <li>
-                  <i class="fa-brands fa-whatsapp mr-2" aria-hidden="true"></i
-                  ><a
-                    href="https://wa.me/5500000000000"
-                    target="_blank"
-                    rel="noopener"
-                    >WhatsApp</a
-                  >
-                </li>
-                <li>
-                  <i
-                    class="fa-solid fa-location-dot mr-2"
-                    aria-hidden="true"
-                  ></i
-                  >Atendimento presencial em
-                  <span class="italic">[Cidade / Estado]</span> e online para
-                  todo o Brasil.
-                </li>
-                <li>
-                  <div class="h-64 w-full rounded-lg overflow-hidden bg-white">
-                    <iframe
-                      title="Mapa de atendimento"
-                      class="w-full h-full"
-                      loading="lazy"
-                      referrerpolicy="no-referrer-when-downgrade"
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.068028016618!2d-46.652985723716705!3d-23.566079161764155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c9ca72a3b1%3A0xf2a381dffb743d0f!2sAv.%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1686930567915"
-                    ></iframe>
-                  </div>
-                </li>
-              </ul>
-            </div>
           </div>
         </div>
       </section>
