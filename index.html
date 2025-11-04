@@ -318,37 +318,37 @@
       </div>
     </header>
     <main id="conteudo">
-      <section
-        id="hero"
-        class="relative py-20 bg-gradient-to-br from-purple-100 to-pink-100 overflow-hidden"
-      >
+      <section id="hero" class="relative py-20 bg-gradient-to-br from-purple-100 to-pink-100 overflow-hidden">
         <div class="floating-particles" aria-hidden="true" id="particles"></div>
-        <div
-          class="container mx-auto px-4 flex flex-col md:flex-row items-center"
-        >
-          <div class="md:w-1/2 hero-content">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4 gradient-text">
-              Bianca Docilio - Cuidado Farmacêutico com Excelência
-            </h1>
-            <p class="text-xl mb-8 text-gray-700">
-              Consultoria medicamentosa personalizada para sua saúde e bem-estar
-            </p>
-            <div class="mt-6 flex flex-col sm:flex-row gap-3 sm:justify-start justify-center">
-              <a href="#contato" class="btn-primary magnetic-btn"
-                >Agendar Consultoria</a
-              >
-              <a href="#servicos" class="btn-secondary magnetic-btn"
-                >Ver Serviços</a
-              >
-            </div>
+
+        <!-- grid para poder ordenar no mobile e alinhar no desktop -->
+        <div class="container mx-auto px-4 grid gap-5 md:grid-cols-2 md:items-center">
+          <!-- 1) Nome -->
+          <h1 class="order-1 md:order-1 md:col-start-1 text-4xl md:text-5xl font-extrabold leading-tight text-center md:text-left gradient-text">
+            Bianca Docilio
+          </h1>
+
+          <!-- 2) Foto (mantido tamanho) -->
+          <div class="order-2 md:order-2 md:col-start-2 flex justify-center hero-image">
+            <img src="assets/perfil.jpeg" alt="Retrato de Bianca Docilio"
+                class="rounded-full w-64 h-80 object-cover shadow-lg hover:scale-105 transition-transform"
+                loading="lazy" />
           </div>
-          <div class="md:w-1/2 mt-8 md:mt-0 flex justify-center hero-image">
-            <img
-              src="assets/perfil.jpeg"
-              alt="Retrato de Bianca Docilio"
-              class="rounded-full w-64 h-80 object-cover shadow-lg hover:scale-105 transition-transform"
-              loading="lazy"
-            />
+
+          <!-- 3) Tagline (após a foto no mobile) -->
+          <h2 class="order-3 md:order-1 md:col-start-1 text-2xl md:text-3xl font-semibold text-center md:text-left text-gray-900">
+            Cuidado Farmacêutico com Excelência
+          </h2>
+
+          <!-- 4) Subtítulo -->
+          <p class="order-4 md:order-1 md:col-start-1 text-xl text-gray-700 text-center md:text-left">
+            Consultoria medicamentosa personalizada para sua saúde e bem-estar
+          </p>
+
+          <!-- 5) Botões -->
+          <div class="order-5 md:order-1 md:col-start-1 flex flex-col sm:flex-row gap-3 sm:justify-start justify-center">
+            <a href="#contato" class="btn-primary magnetic-btn">Agendar Consultoria</a>
+            <a href="#servicos" class="btn-secondary magnetic-btn">Ver Serviços</a>
           </div>
         </div>
       </section>
